@@ -32,7 +32,17 @@ const ExampleTwo = () =>  {
           <Row data={['Process', 'Burst Time', 'Arrival Time','Priority']} flexArr={[1, 1, 1]} style={styles.head} textStyle={styles.text}/>
           <TableWrapper style={styles.wrapper}>
             <Col data={['P1', 'P2', 'P3']} style={styles.title} heightArr={[28,28]} textStyle={styles.text}/>
-            <Rows data={[[<TextInput onChangeText={(e) => setP1bt(e)}/>, <TextInput onChangeText={(e) => setP1at(e)}/>, <TextInput onChangeText={(e) => setP1p(e)}/>],[<TextInput onChangeText={(e) => setP2bt(e)}/>, <TextInput onChangeText={(e) => setP2at(e)}/>, <TextInput onChangeText={(e) => setP2p(e)}/>],[<TextInput onChangeText={(e) => setP3bt(e)}/>, <TextInput onChangeText={(e) => setP3at(e)}/>, <TextInput onChangeText={(e) => setP3p(e)}/>]]} flexArr={[1, 1, 1]} style={styles.row} textStyle={styles.text}/>
+            <Rows data={[
+              [<TextInput style={{textAlign: 'center'}} onChangeText={(e) => setP1bt(e)}/>,
+              <TextInput style={{textAlign: 'center'}} onChangeText={(e) => setP1at(e)}/>,
+              <TextInput style={{textAlign: 'center'}} onChangeText={(e) => setP1p(e)}/>],
+              [<TextInput style={{textAlign: 'center'}} onChangeText={(e) => setP2bt(e)}/>,
+                <TextInput style={{textAlign: 'center'}} onChangeText={(e) => setP2at(e)}/>,
+                <TextInput style={{textAlign: 'center'}} onChangeText={(e) => setP2p(e)}/>],
+                [<TextInput style={{textAlign: 'center'}} onChangeText={(e) => setP3bt(e)}/>,
+                  <TextInput style={{textAlign: 'center'}} onChangeText={(e) => setP3at(e)}/>,
+                  <TextInput style={{textAlign: 'center'}} onChangeText={(e) => setP3p(e)}/>]]}
+                  flexArr={[1, 1, 1]} style={styles.row} textStyle={styles.text}/>
           </TableWrapper>
         </Table>
       </View>
