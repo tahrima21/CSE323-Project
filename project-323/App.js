@@ -2,7 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
 import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 import ExampleTwo from './table.js';
-
+import Test from './test.js';
+//import { BrowserRouter as Router, Route } from 'react-router-dom'
 export default function App() {
   return (
     <>
@@ -20,6 +21,7 @@ export default function App() {
       />
     </View>
       <StatusBar style="auto" />
+      {/*<Test />*/}
     </View>
   </>);
 }
