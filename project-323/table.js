@@ -23,10 +23,6 @@ const ExampleTwo = () =>  {
   //animals.push('chickens', 'cats', 'dogs');
   //console.log(animals);
 
-<<<<<<< HEAD
-
-  console.log([p1bt,p1at,p1p,p2bt,p2at,p2p]);
-=======
   //console.log(animals[0])
   //console.log([p1bt,p1at,p1p,p2bt,p2at,p2p]);
   //const p1
@@ -61,7 +57,6 @@ const ExampleTwo = () =>  {
   }
   console.log(pArray);
 
->>>>>>> 905b8cdf9087cc05a9a1bfe72dd4a85ce78b6aee
     return (
       <KeyboardAwareScrollView
       style={{ backgroundColor: '#4c69a5' }}
