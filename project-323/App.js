@@ -9,17 +9,6 @@ export default function App() {
     <>
     <ExampleTwo />
     <View style={styles.container}>
-    <View>
-      <Text>Hello, I am...</Text>
-      <TextInput
-        style={{
-          height: 40,
-          borderColor: 'gray',
-          borderWidth: 1
-        }}
-        defaultValue="Name me!"
-      />
-    </View>
       <StatusBar style="auto" />
       {/*<Test />*/}
     </View>
