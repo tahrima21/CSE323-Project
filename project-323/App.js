@@ -7,15 +7,22 @@ import Test from './test.js';
 import FCFS from './fcfs.js'
 import Type from './Component/Type'
 import Navbar from './navbar.jsx'
+import { NativeRouter, Route, Link, Routes } from "react-router-native";
 //import Routes from './routes.js'
 //import Navigator from './drawer.js'
 //import { BrowserRouter as Router, Route } from 'react-router-dom'
 export default function App() {
   return (
     <>
-
+    <NativeRouter>
+    <Routes>
+    <Route exact path="/" element={<Type />} />
+      <Route path="/FCFS" element={<FCFS />} />
+      <Route path="/RR" element={<ExampleTwo />} />
+      </Routes>
+    </NativeRouter>
     {/*<Navbar />*/}
-    <Type />
+    {/*<Type />*/}
     {/*<FCFS />*/}
     {/*<ExampleTwo />*/}
 

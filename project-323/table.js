@@ -74,10 +74,11 @@ const ExampleTwo = () =>  {
       <KeyboardAwareScrollView
       style={{ backgroundColor: '#4c69a5' }}
       resetScrollToCoords={{ x: 0, y: 0 }}
-      contentContainerStyle={{flex: 1, padding: 16, marginBottom:-250}}
+      contentContainerStyle={{flex: 1, padding: 16, marginBottom:-255}}
       scrollEnabled={true}
     >
       <>
+      <Text style={styles.text}>Round Robin</Text>
       <View style={styles.container}>
         <Table borderStyle={{borderWidth: 1}}>
           <Row data={['Process', 'Burst Time', 'Arrival Time']} flexArr={[1, 1,1]} style={styles.head} textStyle={styles.text}/>
@@ -95,7 +96,7 @@ const ExampleTwo = () =>  {
         </Table>
       </View>
 
-      <View style={{paddingBottom: 30, paddingTop: 50}}>
+      <View style={{paddingBottom: 30, paddingTop: 40}}>
       <Text style={{padding: 16, paddingBottom: 20}}>Time Quantum: </Text>
       <View style={{paddingLeft: 16}}>
       <TextInput

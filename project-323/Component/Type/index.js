@@ -7,9 +7,16 @@ import ExampleTwo from '../../table.js';
 import FCFS from '../../fcfs.js';
 import { useNavigation } from '@react-navigation/native'
 import { NavigationContainer } from '@react-navigation/native';
+import { NativeRouter, Route, Link, Routes } from "react-router-native";
+
 const Type = ({navigation}) => {
   //const navigation = useNavigation();
+  function link(){
+    <Link to="/FCFS">
+    </Link>
+  }
     return (
+
         <View style={styles.cpuContainer}>
 
         <ImageBackground source = {require('../../assets/algo7.jpg')} //adding images in the background
@@ -26,10 +33,9 @@ const Type = ({navigation}) => {
         <StyledButton
           type="preemptive"
           content={"FCFS"}
-          onPress = {() =>navigation.navigate('FCFS')}
+          onPress = {link}
 
         />
-
         <StyledButton
           type="nonpreemptive"
           content={"RR"}

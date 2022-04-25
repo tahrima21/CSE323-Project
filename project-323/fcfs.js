@@ -38,6 +38,7 @@ const FCFS = () =>  {
 
 
     return (
+
       <KeyboardAwareScrollView
       style={{ backgroundColor: '#4c69a5' }}
       resetScrollToCoords={{ x: 0, y: 0 }}
@@ -45,6 +46,7 @@ const FCFS = () =>  {
       scrollEnabled={true}
     >
       <>
+      <Text style={styles.text}>FCFS</Text>
       <View style={styles.container}>
         <Table borderStyle={{borderWidth: 1}}>
           <Row data={['Process', 'Burst Time', 'Arrival Time']} flexArr={[1, 1,1]} style={styles.head} textStyle={styles.text}/>
@@ -63,7 +65,7 @@ const FCFS = () =>  {
       </View>
 
 
-      <View style={{flex: 1, padding: 16, paddingBottom: 150, paddingTop: -5, backgroundColor: '#fff', marginBottom:-50}}>
+      <View style={{flex: 1, padding: 16, paddingBottom: 150, paddingTop: -5, backgroundColor: '#fff', marginBottom:-250}}>
         <Table borderStyle={{borderWidth: 1}}>
           <Row data={sortedP} flexArr={pbtarray ? pbtarray : [1,1,1]} style={styles.head} textStyle={styles.text}/>
         </Table>
