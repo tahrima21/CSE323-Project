@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Pressable} from 'react-native';
 import React from 'react';
 import styles from './styles';
-import { NativeRouter, Route, Link, Routes } from "react-router-native";
+import { Link } from "react-router-native";
 
 
 const StyledButton = ({type, content, path}) => {

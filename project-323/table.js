@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { StyleSheet, View, TextInput, Text, Image } from 'react-native';
 import { Table, TableWrapper, Row, Rows, Col } from 'react-native-table-component';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import { NativeRouter, Route, Link, Routes } from "react-router-native";
+import {  Link } from "react-router-native";
 
 const ExampleTwo = () =>  {
   const [p1bt, setP1bt] = useState(0);
