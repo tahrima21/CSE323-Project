@@ -31,15 +31,15 @@ const Type = () => {
           to="/FCFS"
           type="preemptive"
           content={"FCFS"}
+          
 
-
+          
         />
         <StyledButton
           to="/RR"
           type="nonpreemptive"
           content={"RR"}
-
-
+          
         />
 
         </View>

@@ -14,7 +14,7 @@ const StyledButton = ({type, content, path}) => {
 
         <View style={styles.container}>
             <Link
-            to={path}
+            to='/RR'
             style={[styles.button, {backgroundColor: backgroundColor}]}
 
             >
@@ -31,3 +31,14 @@ const StyledButton = ({type, content, path}) => {
 }
 
 export default StyledButton;
+{/* <Link
+            to='/RR'
+            style={[styles.button, {backgroundColor: backgroundColor}]}
+
+            >
+
+                <Text style={styles.text}>{content}</Text>
+
+
+
+            </Link> */}
