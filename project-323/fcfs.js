@@ -2,23 +2,20 @@ import { useState } from 'react';
 import { StyleSheet, View, TextInput, Text } from 'react-native';
 import { Table, TableWrapper, Row, Rows, Col } from 'react-native-table-component';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-const ExampleTwo = () =>  {
+const FCFS = () =>  {
   const [p1bt, setP1bt] = useState(0);
   const [p2bt, setP2bt] = useState(0);
   const [p3bt, setP3bt] = useState(0);
   const [p1at, setP1at] = useState(0);
   const [p2at, setP2at] = useState(0);
   const [p3at, setP3at] = useState(0);
-  const [tq, setTq] = useState(0);
 
 
-  let btarray = [p1bt,p2bt,p3bt]
-  let sum = 0;
+  const pbt = [p1bt,p2bt,p3bt];
+  const pbtarray = []
   for(let i=0; i<=2;i++){
-    sum += parseInt(btarray[i]);
+    pbtarray.push(parseInt(pbt[i]))
   }
-  console.log(sum);
-
 
     const procs = [
     {name: 'P1', at: p1at},
@@ -33,39 +30,9 @@ const ExampleTwo = () =>  {
 
     console.log(procs);
     const sortedP = procs.map(x=>x.name);
-    const demo = sortedP
-    const ganttBar = []
-    for(let i=0;i<=((sum/2)-1);i++){
-      demo.push(sortedP[i])
-    }
-    /*let k=0;
-    const final = []
-    while((p1bt+p2bt+p3bt) != 0){
-      if(p1bt != 0){
-        final.push(demo[k]);
-        p1bt-tq;
-      }
-      k++
-      if(p2bt != 0){
-        final.push(demo[k]);
-        p2bt-tq;
-      }
-      k++
-      if(p3bt != 0){
-        final.push(demo[k]);
-        p3bt-tq;
-      }
-      k++
-    }*/
-    //console.log(sum);
-    const sortedAt = procs.map(x=>x.at);
-    console.log(demo);
-    //console.log(ganttBar)
-    //console.log(sortedAt)
 
+    console.log(sortedP)
 
-
-    //console.log(ganttBar);
 
 
 
@@ -95,24 +62,10 @@ const ExampleTwo = () =>  {
         </Table>
       </View>
 
-      <View style={{paddingBottom: 30, paddingTop: 50}}>
-      <Text style={{padding: 16, paddingBottom: 20}}>Time Quantum: </Text>
-      <View style={{paddingLeft: 16}}>
-      <TextInput
-        style={{
-          height: 40,
-          borderWidth: 1,
-          textAlign: 'center',
-          width: 100,
-        }}
-        onChangeText={(e) => setTq(e)}
 
-      />
-      </View>
-      </View>
-      <View style={{flex: 1, padding: 16, paddingBottom: 150, paddingTop: -5, backgroundColor: '#fff', marginBottom:-250}}>
+      <View style={{flex: 1, padding: 16, paddingBottom: 150, paddingTop: -5, backgroundColor: '#fff', marginBottom:-50}}>
         <Table borderStyle={{borderWidth: 1}}>
-          <Row data={demo} flexArr={[1, 1,1]} style={styles.head} textStyle={styles.text}/>
+          <Row data={sortedP} flexArr={pbtarray ? pbtarray : [1,1,1]} style={styles.head} textStyle={styles.text}/>
         </Table>
       </View>
       </>
@@ -130,4 +83,4 @@ const styles = StyleSheet.create({
   text: { textAlign: 'center' }
 });
 
-export default ExampleTwo;
+export default FCFS;

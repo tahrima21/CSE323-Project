@@ -4,18 +4,17 @@ import React from 'react';
 import styles from './styles';
 
 
-const StyledButton = (props) => {
+const StyledButton = ({type, content, onPress}) => {
 
-    const {type, content, onPress} =props;
 
     const backgroundColor = type === 'preemptive' ? '#008080' : '#009999';
-    
+
      return (
 
         <View style={styles.container}>
-            <Pressable 
+            <Pressable
             style={[styles.button, {backgroundColor: backgroundColor}]}
-            onPress = {() =>onPress()}
+            onPress = {()=>onPress()}
             >
 
                 <Text style={styles.text}>{content}</Text>
@@ -24,7 +23,7 @@ const StyledButton = (props) => {
 
             </Pressable>
 
-            
+
         </View>
     );
 }
