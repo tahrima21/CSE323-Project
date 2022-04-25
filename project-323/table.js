@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { StyleSheet, View, TextInput, Text } from 'react-native';
+import { StyleSheet, View, TextInput, Text, Image } from 'react-native';
 import { Table, TableWrapper, Row, Rows, Col } from 'react-native-table-component';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { NativeRouter, Route, Link, Routes } from "react-router-native";
+
 const ExampleTwo = () =>  {
   const [p1bt, setP1bt] = useState(0);
   const [p2bt, setP2bt] = useState(0);
@@ -80,6 +82,13 @@ const ExampleTwo = () =>  {
       <>
       <Text style={styles.text}>Round Robin</Text>
       <View style={styles.container}>
+      <View>
+      <Link to="/">
+      <Image source = {require('./assets/icons8-double-left-24.png')} //adding images in the background
+      style={{height: 20, width: 30, marginBottom: 15}}
+      />
+      </Link>
+      </View>
         <Table borderStyle={{borderWidth: 1}}>
           <Row data={['Process', 'Burst Time', 'Arrival Time']} flexArr={[1, 1,1]} style={styles.head} textStyle={styles.text}/>
           <TableWrapper style={styles.wrapper}>

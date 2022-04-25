@@ -2,9 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Pressable} from 'react-native';
 import React from 'react';
 import styles from './styles';
+import { NativeRouter, Route, Link, Routes } from "react-router-native";
 
 
-const StyledButton = ({type, content, onPress}) => {
+const StyledButton = ({type, content, path}) => {
 
 
     const backgroundColor = type === 'preemptive' ? '#008080' : '#009999';
@@ -12,16 +13,17 @@ const StyledButton = ({type, content, onPress}) => {
      return (
 
         <View style={styles.container}>
-            <Pressable
+            <Link
+            to={path}
             style={[styles.button, {backgroundColor: backgroundColor}]}
-            onPress = {()=>onPress()}
+
             >
 
                 <Text style={styles.text}>{content}</Text>
 
 
 
-            </Pressable>
+            </Link>
 
 
         </View>

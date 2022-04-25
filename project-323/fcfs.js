@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { StyleSheet, View, TextInput, Text } from 'react-native';
+import { StyleSheet, View, TextInput, Text,Image } from 'react-native';
 import { Table, TableWrapper, Row, Rows, Col } from 'react-native-table-component';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { NativeRouter, Route, Link, Routes } from "react-router-native";
+
 const FCFS = () =>  {
   const [p1bt, setP1bt] = useState(0);
   const [p2bt, setP2bt] = useState(0);
@@ -47,7 +49,15 @@ const FCFS = () =>  {
     >
       <>
       <Text style={styles.text}>FCFS</Text>
+
       <View style={styles.container}>
+      <View>
+      <Link to="/">
+      <Image source = {require('./assets/icons8-double-left-24.png')} //adding images in the background
+      style={{height: 20, width: 30, marginBottom: 15}}
+      />
+      </Link>
+      </View>
         <Table borderStyle={{borderWidth: 1}}>
           <Row data={['Process', 'Burst Time', 'Arrival Time']} flexArr={[1, 1,1]} style={styles.head} textStyle={styles.text}/>
           <TableWrapper style={styles.wrapper}>
@@ -77,7 +87,7 @@ const FCFS = () =>  {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff', marginBottom:-245 },
+  container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff', marginBottom:-400 },
   head: {  height: 40,  backgroundColor: '#f1f8ff'  },
   wrapper: { flexDirection: 'row' },
   title: { flex: 1, backgroundColor: '#f6f8fa' },

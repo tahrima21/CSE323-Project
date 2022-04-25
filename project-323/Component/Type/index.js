@@ -9,12 +9,9 @@ import { useNavigation } from '@react-navigation/native'
 import { NavigationContainer } from '@react-navigation/native';
 import { NativeRouter, Route, Link, Routes } from "react-router-native";
 
-const Type = ({navigation}) => {
+const Type = () => {
   //const navigation = useNavigation();
-  function link(){
-    <Link to="/FCFS">
-    </Link>
-  }
+
     return (
 
         <View style={styles.cpuContainer}>
@@ -31,15 +28,17 @@ const Type = ({navigation}) => {
         <View style={styles.buttonContainer}>
 
         <StyledButton
+          to="/FCFS"
           type="preemptive"
           content={"FCFS"}
-          onPress = {link}
+
 
         />
         <StyledButton
+          to="/RR"
           type="nonpreemptive"
           content={"RR"}
-          onPress = {() =>{console.warn("pressed")}}
+
 
         />
 
