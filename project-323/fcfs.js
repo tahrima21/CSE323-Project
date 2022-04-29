@@ -14,16 +14,10 @@ const FCFS = () =>  {
   const [p3at, setP3at] = useState(0);
 
 
-  const pbt = [p1bt,p2bt,p3bt];
-  const pbtarray = []
-  for(let i=0; i<=2;i++){
-    pbtarray.push(parseInt(pbt[i]))
-  }
-
     const procs = [
-    {name: 'P1', at: p1at},
-    {name: 'P2', at: p2at},
-    {name: 'P3', at: p3at}]
+    {name: 'P1', at: p1at, bt: p1bt},
+    {name: 'P2', at: p2at, bt: p2bt},
+    {name: 'P3', at: p3at, bt: p3bt}]
 
     procs.sort((a,b)=>{
       if(a.at<b.at){return -1}
@@ -35,6 +29,12 @@ const FCFS = () =>  {
     const sortedP = procs.map(x=>x.name);
 
     console.log(sortedP)
+    const sortedB = procs.map(y=>y.bt);
+
+    const burstTime = []
+    for(let i=0;i<=2;i++){
+      burstTime.push(parseInt(sortedB[i]))
+    }
 
 
 
@@ -93,7 +93,7 @@ const FCFS = () =>  {
 
       <View style={{width: '85%', height: '80%',flex: 1, padding: 20, paddingBottom: 50, paddingTop: -5, backgroundColor: '#fff', marginBottom:20, borderRadius: 25,}}>
         <Table borderStyle={{borderWidth: 2,  }}>
-          <Row data={sortedP} flexArr={pbtarray ? pbtarray : [1,1,1]} style={styles.head} textStyle={styles.text}/>
+          <Row data={sortedP} flexArr={burstTime ? burstTime : [1,1,1]} style={styles.head} textStyle={styles.text}/>
         </Table>
       </View>
       </KeyboardAwareScrollView>
