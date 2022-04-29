@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { StyleSheet, View, TextInput, Text,Image } from 'react-native';
+import { StyleSheet, View, TextInput, Text,Image, ImageBackground, ScrollView, } from 'react-native';
 import { Table, TableWrapper, Row, Rows, Col } from 'react-native-table-component';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import { NativeRouter, Route, Link, Routes } from "react-router-native";
+import { Link } from "react-router-native";
+
 
 const FCFS = () =>  {
   const [p1bt, setP1bt] = useState(0);
@@ -41,24 +42,36 @@ const FCFS = () =>  {
 
     return (
 
-      <KeyboardAwareScrollView
-      style={{ backgroundColor: '#4c69a5' }}
-      resetScrollToCoords={{ x: 0, y: 0 }}
-      contentContainerStyle={{flex: 1, padding: 16, marginBottom:-250}}
-      scrollEnabled={true}
-    >
-      <>
-      <Text style={styles.text}>FCFS</Text>
+      <View style={styles.outerContainer}>
+
+        <ImageBackground source = {require('./assets/jojo2.jpg')} 
+        style={styles.image}
+        />
+
+      
+    <ScrollView contentContainerStyle= {{
+          flex: 1,
+          width: '100%',
+          height: '100%',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}> 
+     
+      
+      
+     <Text style={styles.text}>---</Text>
 
       <View style={styles.container}>
+      <Text style={styles.topText}>FCFS</Text>
+      
       <View>
       <Link to="/">
-      <Image source = {require('./assets/icons8-double-left-24.png')} //adding images in the background
+      <Image source = {require('./assets/icons8-double-left-24.png')} 
       style={{height: 20, width: 30, marginBottom: 15}}
       />
       </Link>
       </View>
-        <Table borderStyle={{borderWidth: 1}}>
+        <Table borderStyle={{borderWidth: 2}}>
           <Row data={['Process', 'Burst Time', 'Arrival Time']} flexArr={[1, 1,1]} style={styles.head} textStyle={styles.text}/>
           <TableWrapper style={styles.wrapper}>
             <Col data={['P1', 'P2', 'P3']} style={styles.title} heightArr={[28,28]} textStyle={styles.text}/>
@@ -72,27 +85,43 @@ const FCFS = () =>  {
                   flexArr={[1, 1,]} style={styles.row} textStyle={styles.text}/>
           </TableWrapper>
         </Table>
+        
       </View>
 
 
-      <View style={{flex: 1, padding: 16, paddingBottom: 150, paddingTop: -5, backgroundColor: '#fff', marginBottom:-250}}>
-        <Table borderStyle={{borderWidth: 1}}>
+     
+      <View style={{width: '85%', height: '80%',flex: 1, padding: 20, paddingBottom: 50, paddingTop: -5, backgroundColor: '#fff', marginBottom:20, borderRadius: 25,}}>
+        <Table borderStyle={{borderWidth: 2,  }}>
           <Row data={sortedP} flexArr={pbtarray ? pbtarray : [1,1,1]} style={styles.head} textStyle={styles.text}/>
         </Table>
       </View>
-      </>
-      </KeyboardAwareScrollView>
+      
+     
+      </ScrollView>
+      
+      </View>
     )
 
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff', marginBottom:-400 },
-  head: {  height: 40,  backgroundColor: '#f1f8ff'  },
+  outerContainer: {width: '100%', height: '100%'},
+  image: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover',
+    position: 'absolute', 
+
+  },
+
+  container: { width: '85%', height: '80%', flex: 1, padding: 20, paddingTop: 30, backgroundColor: '#fff', marginBottom:-300 , borderRadius: 25, },
+  head: {  height: 40,  backgroundColor: '#cccccc'  },
   wrapper: { flexDirection: 'row' },
   title: { flex: 1, backgroundColor: '#f6f8fa' },
   row: {  height: 28  },
-  text: { textAlign: 'center' }
+  text: { textAlign: 'center' ,fontWeight: '600'},
+  topText: {textAlign: 'center'  , fontSize: 20,fontWeight: '900',shadowColor: '#808080', shadowOffset: {width: -4, height: 4}, shadowOpacity: 20,
+  shadowRadius: 2,}
 });
 
 export default FCFS;
