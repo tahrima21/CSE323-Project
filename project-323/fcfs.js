@@ -42,31 +42,32 @@ const FCFS = () =>  {
 
     return (
 
+
+          <>
+
       <View style={styles.outerContainer}>
+      <ImageBackground source = {require('./assets/jojo2.jpg')}
+      style={styles.image}
+      />
+      <KeyboardAwareScrollView contentContainerStyle= {{
+            flex: 1,
+            width: '100%',
+            height: '100%',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 16, marginBottom:-450
+          }}
+          resetScrollToCoords={{ x: 0, y: 0 }}
+          scrollEnabled={true}>
 
-        <ImageBackground source = {require('./assets/jojo2.jpg')} 
-        style={styles.image}
-        />
-
-      
-    <ScrollView contentContainerStyle= {{
-          flex: 1,
-          width: '100%',
-          height: '100%',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}> 
-     
-      
-      
      <Text style={styles.text}>---</Text>
 
       <View style={styles.container}>
       <Text style={styles.topText}>FCFS</Text>
-      
+
       <View>
       <Link to="/">
-      <Image source = {require('./assets/icons8-double-left-24.png')} 
+      <Image source = {require('./assets/icons8-double-left-24.png')}
       style={{height: 20, width: 30, marginBottom: 15}}
       />
       </Link>
@@ -85,21 +86,21 @@ const FCFS = () =>  {
                   flexArr={[1, 1,]} style={styles.row} textStyle={styles.text}/>
           </TableWrapper>
         </Table>
-        
+
       </View>
 
 
-     
+
       <View style={{width: '85%', height: '80%',flex: 1, padding: 20, paddingBottom: 50, paddingTop: -5, backgroundColor: '#fff', marginBottom:20, borderRadius: 25,}}>
         <Table borderStyle={{borderWidth: 2,  }}>
           <Row data={sortedP} flexArr={pbtarray ? pbtarray : [1,1,1]} style={styles.head} textStyle={styles.text}/>
         </Table>
       </View>
-      
-     
-      </ScrollView>
-      
+      </KeyboardAwareScrollView>
       </View>
+      </>
+
+
     )
 
 }
@@ -110,7 +111,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     resizeMode: 'cover',
-    position: 'absolute', 
+    position: 'absolute',
 
   },
 

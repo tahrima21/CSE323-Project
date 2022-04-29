@@ -37,7 +37,7 @@ const ExampleTwo = () =>  {
     const sortedP = procs.map(x=>x.name);
     const demo = sortedP
     const ganttBar = []
-    for(let i=0;i<=((sum/2)-1);i++){
+    for(let i=0;i<=((sum/2)-4);i++){
       demo.push(sortedP[i])
     }
     /*let k=0;
@@ -74,22 +74,29 @@ const ExampleTwo = () =>  {
 
     return (
 
+          <>
+
       <View style={styles.outerContainer}>
 
-        <ImageBackground source = {require('./assets/jojo2.jpg')} 
+        <ImageBackground source = {require('./assets/jojo2.jpg')}
         style={styles.image}
         />
 
-     
+        <KeyboardAwareScrollView contentContainerStyle= {{
+              flex: 1,
+              width: '100%',
+              height: '100%',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: 16, marginBottom:-450
+            }}
+            resetScrollToCoords={{ x: 0, y: 0 }}
+            scrollEnabled={true}>
 
-    <ScrollView contentContainerStyle= {{
-          flex: 1,
-          width: '100%',
-          height: '100%',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}> 
-      
+
+
+
+
       <Text style={styles.text}>---</Text>
       <View style={styles.container}>
       <Text style={styles.topText}>ROUND ROBIN</Text>
@@ -136,11 +143,12 @@ const ExampleTwo = () =>  {
           <Row data={demo} flexArr={[1, 1, 1]} style={styles.head} textStyle={styles.text}/>
         </Table>
       </View>
-      
-
-      </ScrollView>
-
+      </KeyboardAwareScrollView>
       </View>
+      </>
+
+
+
     )
 
 }
@@ -151,7 +159,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     resizeMode: 'cover',
-    position: 'absolute', 
+    position: 'absolute',
 
 
   },
