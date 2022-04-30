@@ -8,7 +8,7 @@ import { Link } from "react-router-native";
 const StyledButton = ({type, content, path}) => {
 
 
-    const backgroundColor = type === 'preemptive' ? '#008080' : '#009999';
+    const backgroundColor = type === 'preemptive' ? '#8c8c70' : '#666666';
 
      return (
 

@@ -16,7 +16,7 @@ const Type = () => {
 
         <View style={styles.cpuContainer}>
 
-        <ImageBackground source = {require('../../assets/algo7.jpg')} //adding images in the background
+        <ImageBackground source = {require('../../assets/jojo2.jpg')} //adding images in the background
         style={styles.image}
         />
 
