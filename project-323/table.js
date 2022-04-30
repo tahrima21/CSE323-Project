@@ -38,20 +38,8 @@ const ExampleTwo = () =>  {
     const sortedA = procs.map(x=>x.at);
     const sortedP = procs.map(x=>x.name);
     const sortedB = procs.map(x=>x.bt);
-    const demo = sortedP
-    const ganttBar = []
-    for(let i=0;i<=((sum/2)-4);i++){
-      demo.push(sortedP[i])
-    }
-
-    const sortedAt = procs.map(x=>x.at);
-    console.log(demo);
-    //console.log(ganttBar)
-    //console.log(sortedAt)
 
 
-
-    //console.log(ganttBar);
     const processesInfo = atarray
     .map((item, index) => {
       return {
@@ -170,7 +158,7 @@ const ExampleTwo = () =>  {
   console.log(solvedProcessesInfo);
   console.log(details);
   console.log(ganttChartInfo);
-
+  const demo = ganttChartInfo.map(x=>x.job)
   const ss = ganttChartInfo.map(x=>x.start);
   ss.push(sum)
   console.log(ss);
